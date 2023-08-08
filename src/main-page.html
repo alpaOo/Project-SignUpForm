@@ -5,74 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="./css/main-style.css">
+    <script src="./form-validation.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <div class="left">The Odin Project</div>
-      <div class="right">
-        <div class="topSection">This is not a real online service! You know you
-          need something like this in your life to help you realize your deepest
-          dreams. Sign up now to get started. <br><br> You know you want to.
+      <div class="mainSection">
+        <div class="left">The Odin Project <!-- <img
+            src="./assets/images/loki-helmet-silhouette-19.png"
+            alt="Loki's helmet"> -->
         </div>
-        <div class="middleSection">
-          <!-- <p class="test">Let's do this!</p> -->
-          <form class="signUpForm" action="./main-page.html" method="get">
-            <div class="firstName">
-              <label for="firstName">First Name </label>
-              <br>
-              <input type="text" name="firstName" id="firstName" size="32"
-                required>
-              <br>
-              <p class="firstNameHint">First name is required.</p>
-            </div>
-            <div class="lastName">
-              <label for="lastName">Last Name </label>
-              <br>
-              <input type="text" name="lastName" id="lastName" size="32"
-                required>
-              <br>
-              <p class="lastNameHint">Last name is required.</p>
-            </div>
-            <div class="email">
-              <label for="email">Email </label>
-              <br>
-              <input type="email" name="email" id="email"
-                placeholder="example@provider.com" size="32" required>
-              <br>
-              <p class="emailHint">Email is required.</p>
-            </div>
-            <div class="phoneNumber">
-              <label for="phoneNumber">Phone Number </label>
-              <br>
-              <input type="tel" name="phoneNumber" id="phoneNumber" size="32"
-                placeholder="(+63) 912 345 6789" required>
-              <br>
-              <p class="phoneNumberHint">Phone number is optional.</p>
-            </div>
-            <div class="password">
-              <label for="password">Password </label>
-              <br>
-              <input type="password" name="password" id="password" size="32"
-                required>
-              <br>
-              <p class="passwordHint">Password is required.</p>
-            </div>
-            <div class="confirmPassword">
-              <label for="confirmPassword">Confirm Password </label>
-              <br>
-              <input type="password" name="confirmPassword" id="confirmPassword"
-                size="32" required>
-              <br>
-              <p class="confirmPasswordHint">Password does not match.</p>
-            </div>
-            <div><button type="submit">Create Account!</button></div>
-          </form>
+        <div class="right">
+          <div class="topSection">This is not a real online service! You know
+            you need something like this in your life to help you realize your
+            deepest dreams. Sign up now to get started. <br><br> You know you
+            want to. </div>
+          <div class="middleSection">
+            <!-- <p class="test">Let's do this!</p> -->
+            <form id="signUpForm" action="./main-page.html" method="get">
+              <div class="firstName">
+                <label for="firstName">First Name </label>
+                <br>
+                <input type="text" name="firstName" id="firstName"
+                  maxlength="28" size="28">
+                <br>
+                <p id="firstNameHint"></p>
+              </div>
+              <div class="lastName">
+                <label for="lastName">Last Name </label>
+                <br>
+                <input type="text" name="lastName" id="lastName" size="28">
+                <br>
+                <p id="lastNameHint"></p>
+              </div>
+              <div class="email">
+                <label for="email">Email </label>
+                <br>
+                <input type="email" name="email" id="email"
+                  placeholder="example@provider.com" size="28">
+                <br>
+                <p id="emailHint"></p>
+              </div>
+              <div class="phoneNumber">
+                <label for="phoneNumber">Phone Number </label>
+                <br>
+                <input type="tel" name="phoneNumber" id="phoneNumber" size="28"
+                  32" width="200" placeholder="">
+                <br>
+                <p id="phoneNumberHint" style="color: #808080;">This field is
+                  optional</p>
+              </div>
+              <div class="password">
+                <label for="password">Password </label>
+                <br>
+                <input type="password" name="password" id="password" size="28">
+                <br>
+                <p id="passwordHint"></p>
+              </div>
+              <div class="confirmPassword">
+                <label for="confirmPassword">Confirm Password </label>
+                <br>
+                <input type="password" name="confirmPassword"
+                  id="confirmPassword" size="28">
+                <br>
+                <p id="confirmPasswordHint"></p>
+              </div>
+              <div><button type="submit">Create Account!</button></div>
+            </form>
+          </div>
+          <div class="bottomSection">Already have an account? <a
+              href="https://www.youtube.com/watch?v=VqBsspJbaOs&t=6s"
+              target="_blank">Sign in</a> </div>
         </div>
-        <div class="bottomSection">Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Accusamus consequatur saepe labore consectetur ex
-          voluptatem quaerat doloremque doloribus, perferendis quos! Est,
-          nostrum nihil. Voluptates ut quos eaque dolorum? Aspernatur, dicta?
-        </div>
+      </div>
+      <div class="footer">
+        <footer>Github: <a href="https://github.com/alpaOo" target="_blank">John
+            Dosdos</a>
+        </footer>
       </div>
     </div>
   </body>

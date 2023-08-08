@@ -1,117 +1,166 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 $main-font: 'Roboto', sans-serif;
-
+$main-font-color: black;
 $main-font-size: 1rem;
 $main-font-weight: 400;
-$sub-font-size: 0.8rem;
-$sub-font-color: rgb(255, 121, 121);
-$section-padding: 2.5rem;
+$hint-font-size: 0.8rem;
+$hint-font-color: #ff7979;
+
+$form-input-color: #808080;
+$form-input-boxshadow: #dcdcdc;
+
+$submit-button-color: #7a7a78;
+$submit-button-hover: hsl(60, 1%, 53%);
+
+$section-padding: 30px 30px 30px 50px;
+
+$main-bg-color: #faf9f6;
+$left-section-bg: #e0dfdc;
+$right-section-bg: #faf9f6;
+$footer-bg: #3b3a39;
 
 * {
   // font-size: cacl(16px / 62.5%);
-  padding: 0;
-  margin: 0;
-  font-size: $main-font-size;
   font-family: $main-font;
+  font-size: $main-font-size;
   font-weight: $main-font-weight;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  height: 100svh;
-  width: 100svw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: $main-font-color;
+  background-color: $main-bg-color;
 }
 
 .container {
-  min-height: 100%;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 50%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-  .left {
-    border: 1px solid red;
+  .mainSection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    .left {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $left-section-bg;
+      text-align: center;
+      font-size: 9rem;
+      font-weight: bold;
+      position: relative;
+
+      // img {
+      //   position: absolute;
+      //   top: 50%;
+      //   max-width: 100px;
+      //   width: auto;
+      // }
+    }
+
+    .right {
+      width: 60%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-flow: column;
+      background-color: $right-section-bg;
+      overflow: hidden;
+
+      // > div {
+      //   border: 1px solid red;
+      // }
+
+      .topSection {
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: justify;
+        padding: $section-padding;
+      }
+
+      .middleSection {
+        width: 100%;
+        box-shadow: 0px 0px 20px 10px $left-section-bg;
+        padding: $section-padding;
+
+        p {
+          color: $hint-font-color;
+          font-size: $hint-font-size;
+          height: 1ch;
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          row-gap: calc(1rem + 1.5px);
+
+          div:nth-last-child(1) {
+            padding-top: 1rem;
+
+            button {
+              color: white;
+              background-color: $submit-button-color;
+              border: none;
+              border-radius: 3px;
+              cursor: pointer;
+              padding: 7px;
+              width: 200px;
+            }
+
+            button:hover {
+              background-color: $submit-button-hover;
+            }
+          }
+
+          [type]:not(button) {
+            border: 1px solid $form-input-color;
+            border-radius: 3px;
+            padding-left: 5px;
+          }
+
+          [type]:not(button):focus {
+            box-shadow: 2px 2px 5px $form-input-boxshadow;
+            outline: none;
+            outline-color: $form-input-color;
+          }
+
+          // [type]:not(button):valid {
+          //   border: 1px solid green;
+          // }
+          // [type]:not(button):invalid {
+          //   border: 1px solid red;
+          // }
+        }
+      }
+
+      .bottomSection {
+        padding: $section-padding;
+        text-align: justify;
+      }
+    }
+  }
+
+  .footer {
+    height: 10%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    padding: $section-padding;
+    background-color: $footer-bg;
 
-  .right {
-    display: grid;
-    grid-template-rows: 25% 50% 25%;
-
-    > div {
-      border: 1px solid red;
-    }
-
-    .topSection {
-      font-size: $main-font-size;
-      padding: $section-padding;
-      padding-top: 4rem;
-    }
-
-    .middleSection {
-      display: flex;
-      flex-flow: column;
-
-      padding: $section-padding;
-
-      p {
-        color: $sub-font-color;
-        font-size: $sub-font-size;
-        padding: 0;
-      }
-
-      form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 1rem;
-
-        div:nth-last-child(1) {
-          padding-top: 1rem;
-
-          button {
-            color: black;
-            background-color: rgb(240, 240, 240);
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            padding: 7px;
-            width: 200px;
-          }
-
-          button:hover {
-            background-color: rgb(236, 236, 236);
-          }
-        }
-
-        [type]:not(button) {
-          border: 1px solid rgb(128, 128, 128);
-          border-radius: 3px;
-          padding-left: 5px;
-        }
-
-        [type]:not(button):focus {
-          box-shadow: 2px 2px 5px rgb(220, 220, 220);
-          outline: none;
-          outline-color: rgb(128, 128, 128);
-        }
-
-        // [type]:not(button):valid {
-        //   border: 1px solid green;
-        // }
-        // [type]:not(button):invalid {
-        //   border: 1px solid red;
-        // }
-      }
-    }
-
-    .bottomSection {
-      padding: $section-padding;
+    footer,
+    a {
+      color: white;
+      background-color: $footer-bg;
+      font-size: 1.2rem;
+      font-weight: 100;
     }
   }
 }
